@@ -1,6 +1,8 @@
 package com.xinshi.consumer.controller;
 
+import com.xinshi.consumer.openfeign.IProviderService;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -14,11 +16,11 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class ConsumerController {
 
-
     @Resource
-    private RestTemplate restTemplate;
+    private IProviderService providerService;
+
     @RequestMapping("/hello")
     public String hello(){
-        return restTemplate.getForObject("http://service-provider/provider/hello",String.class);
+        return providerService.hello();
     }
 }
