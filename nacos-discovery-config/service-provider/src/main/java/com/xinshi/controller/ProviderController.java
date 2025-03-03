@@ -17,8 +17,16 @@ public class ProviderController {
     @Value("${school.name}")
     private String schoolName;
 
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping("/hello")
     public String hello(){
         return "hello " + schoolName;
+    }
+
+    @GetMapping("/getPort")
+    public String getPort() {
+        return "server port: " + this.port;
     }
 }

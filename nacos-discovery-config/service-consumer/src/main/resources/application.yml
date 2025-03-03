@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8001
 spring:
   application:
     name: service-consumer
@@ -7,3 +7,6 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+logging:
+  level:
+    com.xinshi.consumer: debug
