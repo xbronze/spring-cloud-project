@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xinshi</groupId>
-    <artifactId>nacos-discovery-config</artifactId>
+    <artifactId>spring-cloud-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>nacos-discovery-config</name>
-    <description>nacos-discovery-config</description>
+    <name>spring-cloud-project</name>
+    <description>spring-cloud-project</description>
     <url/>
     <licenses>
         <license/>
