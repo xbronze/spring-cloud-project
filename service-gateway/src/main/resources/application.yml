@@ -1,0 +1,13 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+        discovery:
+          locator:
+            enabled: true
