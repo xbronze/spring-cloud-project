@@ -4,10 +4,20 @@ spring:
   application:
     name: service-gateway
   cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
     gateway:
-        discovery:
-          locator:
-            enabled: true
+      routes:
+        - id: service-gateway-route
+          uri: http://localhost:9001/provider/hello
+          predicates:
+            - Method=GET
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false
