@@ -7,9 +7,10 @@ spring:
     gateway:
       routes:
         - id: service-gateway-route
-          uri: http://localhost:9001/provider/hello
+          uri: http://localhost:9001
           predicates:
-            - Method=GET
+#            - Method=GET
+            - After=2025-03-07T09:33:37.8097189+08:00[Asia/Shanghai]
 
 management:
   endpoint:
