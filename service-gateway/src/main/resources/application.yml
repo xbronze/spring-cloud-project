@@ -11,6 +11,11 @@ spring:
           predicates:
 #            - Method=GET
             - After=2025-03-07T09:33:37.8097189+08:00[Asia/Shanghai]
+          filters:
+            - AddRequestHeader=X-Request-red,blue
+            - AddRequestParameter=color,red
+            - AddResponseHeader=X-Response-Name,China
+            - RemoveResponseHeader=x-response-city
 
 management:
   endpoint:
