@@ -1,3 +1,11 @@
 spring:
   profiles:
     active: dev
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  scan:
+    base-packages: com.xinshi.service
+  protocol:
+    name: dubbo
+    port: -1
