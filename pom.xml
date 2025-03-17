@@ -26,6 +26,7 @@
         <module>service-provider</module>
         <module>service-consumer</module>
         <module>service-gateway</module>
+        <module>service-sentinel</module>
     </modules>
     <scm>
         <connection/>

@@ -1,0 +1,16 @@
+server:
+  port: 9901
+spring:
+  application:
+    name: service-sentinel
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8881
+
+# 开启属性配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
