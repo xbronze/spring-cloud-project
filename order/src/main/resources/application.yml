@@ -15,5 +15,39 @@ spring:
     username: root
     password: 123456
 
+logging:
+  level:
+    io:
+      seata: info
+
 mybatis:
   mapperLocations: classpath:mapper/*.xml
+
+seata:
+  enabled: true
+  application-id: seata-server
+  # 事务组的名称，对应service.vgroupMapping.default_tx_group=xxx中配置的default_tx_group
+  tx-service-group: default_tx_group
+  # 配置事务组与集群的对应关系
+  service:
+    vgroup-mapping:
+      # default_tx_group为事务组的名称，default为集群名称(与registry.conf中的一致)
+      default_tx_group: default
+    disable-global-transaction: false
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: localhost:8848
+      group: SEATA_GROUP
+      namespace: 1a4980b2-34bb-460a-91a8-b6fba50b72e7
+      # registry.conf中，配置cluster名称
+      cluster: default
+  config:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      group: SEATA_GROUP
+      namespace: 1a4980b2-34bb-460a-91a8-b6fba50b72e7
+      # nacos配置中心配置的dataId
+      data-id: seataServer.properties

@@ -1,5 +1,6 @@
 package com.xinshi;
 
+import io.seata.spring.annotation.datasource.EnableAutoDataSourceProxy;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @date: 2025-03-25 22:33
  * @description: TODO
  */
+@EnableAutoDataSourceProxy
 @SpringBootApplication
 @MapperScan("com.xinshi.mapper")
 @EnableDiscoveryClient

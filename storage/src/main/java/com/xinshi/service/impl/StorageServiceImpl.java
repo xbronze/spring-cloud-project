@@ -18,6 +18,8 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public void reduce(Long productId, Integer count) {
         storageMapper.reduce(productId,count);
+        // 模拟异常
+        int a = 10 / 0;
     }
 }
 

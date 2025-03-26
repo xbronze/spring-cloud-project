@@ -4,6 +4,7 @@ import com.xinshi.domain.Order;
 import com.xinshi.mapper.OrderMapper;
 import com.xinshi.service.OrderService;
 import com.xinshi.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class OrderServiceImpl implements OrderService
      * 创建订单->调用库存服务扣减库存->修改订单状态
      */
     @Override
+    @GlobalTransactional
     public void create(Order order) {
         log.info("========>下单开始");
         //创建订单
