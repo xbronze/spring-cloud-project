@@ -19,3 +19,11 @@ feign:
         connectTimeout: 5000
         # 读取超时时间 5s
         readTimeout: 5000
+
+
+rocketmq:
+  consumer:
+    group: consumer_mq_group
+    namesrv-addr: localhost:9876
+    topic: FIRST_TEST_TOPIC
+    tag: TagA

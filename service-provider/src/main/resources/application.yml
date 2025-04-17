@@ -1,3 +1,12 @@
 spring:
   profiles:
     active: dev
+    application:
+      name: service-provider
+server:
+  port: 9001
+
+rocketmq:
+  producer:
+    group: provider_mq_group
+    namesrv-addr: localhost:9876
